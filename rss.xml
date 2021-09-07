@@ -5,7 +5,7 @@
 
     <channel>
         <title>Oliver Brotchie's Blog</title>
-        <description>A developer who loves minimalist programming and Rust. ✨</description>
+        <description>A developer who loves minimalist programming and Rust.&nbsp;🦀</description>
         <language>en-us</language>
         <link>https://oliverbrotchie.github.io/rss.xml</link>
         <atom:link href="https://oliverbrotchie.github.io/rss.xml" rel="self" type="application/rss+xml" />
