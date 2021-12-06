@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>CSS Fingerprinting</title></title>
+
+		<link type="text/css" rel="stylesheet" href="../files/css/stylesheet.css" />
+
+		<link rel="apple-touch-icon" sizes="180x180" href="../files/favicon/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../files/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="../files/favicon/favicon-16x16.png" />
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="A developer who loves minimalist programming and Rust.&nbsp;🦀" />
+		<meta name="authors" content="Oliver Brotchie" />
+		<meta name="keywords" content="Oliver Brotchie Full Stack Developer" />
+		<meta name="robots" content="index, follow" />
+
+	</head>
+
+	<body>
+		<div class="fab">
+			<img src="../files/img/cloud.svg" alt="cloud" />
+			<span>All I dream of is a cabin in the woods.</span>
+		</div>
+
+		<!-- Main Page Content -->
+		<div class="center">
+			<nav>
+				<a class="btn" href="../cv.pdf">CV</a>
+				<a class="btn" href="https://github.com/OliverBrotchie/" alt="Github">
+					<svg viewBox="0 0 16 16" width="24" height="24" aria-hidden="true" style="margin-top: 2.5px;">
+						<path fill="#fff" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+					</svg>
+				</a>
+			</nav>
+			<section>
+				<a href="https://oliverbrotchie.github.io/">
+					<h1>The Unaboomer</h1>
+				</a>
+				<!-- OB -->
+<h1>CSS Fingerprinting</h1><span>by Oliver Brotchie </span><time datetime='Sun, 05 Dec 2021 18:50:15 +0000'>Sun, 05 Dec 2021</time>
+
+
+<p><strong>An experimental method for CSS based fingerprinting and a pure CSS "supercookie".</strong></p>
+
+<h2 id='what_is_it?'>What is it?</h2>
+
+<p>CSS Fingerprinting is a technique of tracking and gathering information on site visitors. This method exploits the nature of CSS to collect various characteristics about the visitor&#8217;s browser and device, which can later be used to either identify or track said visitor.</p>
+
+<h2 id='how_does_it_work?'>How does it work?</h2>
+
+<p>By sending a variety of media queries that apply to specific browser characteristics, the browser will select a set of styles that apply to itself. We then trick the browser into sending this information back to the server by setting the background-image of these styles to a specific URL. The server will then respond with HTTP Status 410 (Gone) to avoid any requests of these characteristics on subsequent reloads.</p>
+
+<p>Font detection works a little differently; every font not installed on device will send a request. By comparing the differences between the requests and the full list of fonts, we can conclude what fonts are installed.</p>
+
+<h2 id='css_cookie'>CSS Cookie</h2>
+
+<p>We can also track visitors cross-origin by requesting an endpoint on the server that will return a permanent redirect (HTTP status 308) to a unique address. The browser will then permanently make requests to the previously generated unique address whenever the endpoint is requested. This creates a pure CSS cookie that is reminisent of the &#8217;<a href='https://supercookie.me/'>supercookie</a>&#8217; exploit. This cookie is stored for an unlimited amount of time; the only way to remove it is to fully clear the browser&#8217;s cache.</p>
+
+<h2 id='why_is_this_important?'>Why is this important?</h2>
+
+<p>This technique avoids anti-tracking methods such as NoScript, VPNs or browser extensions, as it requires no Javascript or Cookies to function.</p>
+
+<p>Currently, this method is not scalable as it requires over 1MB of CSS downloads and hundreds of requests per user. However, with the next upcoming draft of the CSS specification, <a href='https://www.w3.org/TR/css-values-4/'>CSS Values 4</a>, it may dramatically shrink the number of requests per user by allowing the use of custom variables in URLs.</p>
+
+<p>Not only will the upcoming draft make this method scalable, but it will also increase its precision. Currently, without alternative means, it is hard to conclusively link every request to a specific visitor as the only feasible way to determine their origin is to group the requests by the IP address of the connection. However, with the new draft, by generating a randomized string and interpolating it into the URL tag for every visitor, we can accurately identify all requests from said visitor.</p>
+
+<h2 id='why_this_method_beats_all_current_anti-fingerprinting_methods'>Why this method beats all current anti-fingerprinting methods</h2>
+
+<p>Anti-fingerprinting mostly focuses on blocking/spoofing JavaScript APIs as it is far more capable. If JavaScript is blocked (already a high entropy datapoint) there are ways to detect it in CSS or with headers, at which point you would use server-side code to inject the CSS and fingerprint the other characteristics of the browser.</p>
+
+<p>The other problem is how most major browser currently treat permanent redirects in CSS files. CSS permenant redirects will always uniquely identify a user on a single origin without the need for client side code, however, currently most browsers cache permenant redirects in relation to the CSS document not the page origin - allowing for cross-origin tracking.</p>
+
+<strong id='read_more_and_see_some_examples_over_at_oliverbrotchie/css-fingerprint_.'>Read more and see some examples over at <a href='https://github.com/OliverBrotchie/CSS-Fingerprint'>OliverBrotchie/CSS-Fingerprint</a>.</strong>
+
+			</section>
+		</div>
+	</body>
+
+</html>
