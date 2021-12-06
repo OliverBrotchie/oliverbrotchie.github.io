@@ -6,6 +6,7 @@
 
 		<link type="text/css" rel="stylesheet" href="../files/css/stylesheet.css" />
 
+		
 		<link rel="apple-touch-icon" sizes="180x180" href="../files/favicon/apple-touch-icon.png" />
 		<link rel="icon" type="image/png" sizes="32x32" href="../files/favicon/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="../files/favicon/favicon-16x16.png" />
@@ -26,7 +27,7 @@
 		</div>
 
 		<!-- Main Page Content -->
-		<div class="center">
+		<main>
 			<nav>
 				<a class="btn" href="../cv.pdf">CV</a>
 				<a class="btn" href="https://github.com/OliverBrotchie/" alt="Github">
@@ -35,9 +36,9 @@
 					</svg>
 				</a>
 			</nav>
-			<section>
+			<article>
 				<a href="https://oliverbrotchie.github.io/">
-					<h1>The Unaboomer</h1>
+					<h1>The Unazoomer</h1>
 				</a>
 				<!-- OB -->
 <h1>CSS Fingerprinting</h1><span>by Oliver Brotchie </span><time datetime='Sun, 05 Dec 2021 18:50:15 +0000'>Sun, 05 Dec 2021</time>
@@ -59,6 +60,8 @@
 
 <p>We can also track visitors cross-origin by requesting an endpoint on the server that will return a permanent redirect (HTTP status 308) to a unique address. The browser will then permanently make requests to the previously generated unique address whenever the endpoint is requested. This creates a pure CSS cookie that is reminisent of the &#8217;<a href='https://supercookie.me/'>supercookie</a>&#8217; exploit. This cookie is stored for an unlimited amount of time; the only way to remove it is to fully clear the browser&#8217;s cache.</p>
 
+<img src="https://github.com/OliverBrotchie/CSS-Fingerprint/blob/main/img/diagram.png?raw=true" />
+
 <h2 id='why_is_this_important?'>Why is this important?</h2>
 
 <p>This technique avoids anti-tracking methods such as NoScript, VPNs or browser extensions, as it requires no Javascript or Cookies to function.</p>
@@ -69,14 +72,16 @@
 
 <h2 id='why_this_method_beats_all_current_anti-fingerprinting_methods'>Why this method beats all current anti-fingerprinting methods</h2>
 
-<p>Anti-fingerprinting mostly focuses on blocking/spoofing JavaScript APIs as it is far more capable. If JavaScript is blocked (already a high entropy datapoint) there are ways to detect it in CSS or with headers, at which point you would use server-side code to inject the CSS and fingerprint the other characteristics of the browser.</p>
+<p>Current anti-fingerprinting mostly focuses on the blocking or spoofing JavaScript APIs. If JavaScript is blocked we can detect it with CSS, at which point you could use server-side code to inject the CSS-based fingerprinting to detect the other characteristics of the device.</p>
 
-<p>The other problem is how most major browser currently treat permanent redirects in CSS files. CSS permenant redirects will always uniquely identify a user on a single origin without the need for client side code, however, currently most browsers cache permenant redirects in relation to the CSS document not the page origin - allowing for cross-origin tracking.</p>
+<p>The other problem is the way in which most major browser currently treat permanent redirects in CSS files. CSS permenant redirects will always uniquely identify a user on a single origin without the need for client side code, however, currently most browsers cache permenant redirects in relation to the CSS document not the page origin - allowing for cross-origin tracking.</p>
+
+<img src="https://github.com/OliverBrotchie/CSS-Fingerprint/blob/main/img/logo.svg?raw=true" />
 
 <strong id='read_more_and_see_some_examples_over_at_oliverbrotchie/css-fingerprint_.'>Read more and see some examples over at <a href='https://github.com/OliverBrotchie/CSS-Fingerprint'>OliverBrotchie/CSS-Fingerprint</a>.</strong>
 
-			</section>
-		</div>
+			</article>
+		</main>
 	</body>
 
 </html>
