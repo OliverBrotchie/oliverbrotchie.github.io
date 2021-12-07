@@ -111,17 +111,12 @@ blockquote
 .fab
     margin: 160px 0 0 clamp(10px,7.5%, 200px)
     float: left
-    position: fixed
+    position: absolute
     display: none
-
-    &:hover
-        span
-            opacity: 100%
-            transition: opacity 1.5s
 
     span
         position: fixed
-        opacity: 60%
+        opacity: 0%
         writing-mode: vertical-rl
         height: 30ch
         margin: 60px 0 0 -30px
@@ -132,6 +127,10 @@ blockquote
         height: 40px
         width: 40px
         fill: #fff
+
+        &:hover + span
+            opacity: 100%
+            transition: opacity 1.7s ease-in-out
 
     @media #{$large-and-up}
         display: block
