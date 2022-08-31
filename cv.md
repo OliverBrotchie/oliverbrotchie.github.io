@@ -1,6 +1,6 @@
 <h1 style="margin-top:-10px">Oliver Brotchie</h1>
 
-**Address:** Edinburgh, EH14 1QP
+**Address:** Edinburgh, EH14
 **Contact Number:** +44 (0)7848850594
 **Github:** [github/oliverbrotchie](https://github.com/OliverBrotchie)
 **Email:** oliver@unazoomer.net
@@ -10,19 +10,19 @@
 
 ## About Me
 
-A full stack developer from Edinburgh who loves minimalist programming and Rust. I am a startup founder and have a passion for privacy, decentralized technologies and developing new solutions to interesting problems.
+A full stack developer from Edinburgh who loves minimalist programming and Rust. I am a startup founder and have a passion for privacy, decentralised technologies and developing new solutions to interesting problems.
 
 ---
 
- ## Experience
+## Open-Source Projects
  
-- **Founder and CEO of Ream Systems (2020 - Present)** - An app meant to inform the public on current bills, debates in parliament and track what politicians get up to. Expected release: Q2 or Q3 (2022) - *Flutter, GraphQL, Deno, Rust*.
 - **[CSS Fingerprint](https://github.com/OliverBrotchie/css-fingerprint)** - A novel method for CSS based fingerprinting and a pure CSS 'supercookie', **[CSS-Tricks Article](https://css-tricks.com/css-based-fingerprinting/)** - *Advanced CSS, Sass, Nginx*.
 - **[Optionals](https://github.com/OliverBrotchie/css-fingerprint)** - A library for rust-like error handling and options in TypeScript and Deno - *Typescript, Deno, NodeJS*.
+- **[Numeric-Oxide](https://github.com/OliverBrotchie/numeric-oxide)** - A numerical precision library for Javascript environments - *Rust*, *WASM*. 
+- **[Link-rs](https://github.com/OliverBrotchie/link-rs)** - Generate hash-id based URLs and QR codes for use in URL shortening or deep linking services. - *Rust, WASM*.
 - **[OB](https://github.com/OliverBrotchie/ob)** - A minimalist static site generator written in Rust - *Rust, RSS, HTML, XML*.
 - **[Block-List](https://github.com/OliverBrotchie/block-list)** - A hosts-based CLI for system wide ad blocking on desktop and android - *Rust*.
-- **[Conveyance CLI](https://github.com/OliverBrotchie/conveyance-cli)** - Fill out word documents with JSON data, designed for legal conveyancing - *Rust, XML, Docx*.
-- **Freelance Projects** - Various professional freelance contracts doing design work, full stack internal service or website development for differing firms.
+- **[Conveyance CLI](https://github.com/OliverBrotchie/conveyance-cli)** - Fill out word documents with JSON data, designed for legal conveyancing - *Rust, XML, Docx*. 
 
 ---
 
@@ -35,15 +35,15 @@ A full stack developer from Edinburgh who loves minimalist programming and Rust.
 	<li>Rust</li>
 	<li>React</li>
 	<li>Svelte</li>
-	<li>Flutter</li>
 	<li>NodeJS + Express</li>
 	<li>Deno (Typescript)</li>
-	<li>Python</li>
 	<li>PostgreSQL + GraphQL</li>
 	<li>Docker</li>
-	<li>AWS</li>
+	<li>Terraform</li>
+	<li>GCP</li>
+	<li>Cloud Functions</li>
+	<li>Message Queue Systems</li>
 	<li>Bash/Shell Scripting</li>
-	<li>Source Control (Git/Github)</li>
 </ul>
 ---
   
@@ -58,9 +58,19 @@ A full stack developer from Edinburgh who loves minimalist programming and Rust.
 
 ---
 
+## Relevant Experience
+
+- **Founder and CEO of Ream Systems (2020 - 2022)** - An app meant to inform the public on current bills, debates in parliament and track what politicians get up to.
+- **Full-Stack Engineer at Ember Digital (February 2022 - Present)** - In the Integrations Squad, we design and implement new 3rd party integrations such as an Open Banking integration with HSBC Kinetic and re-design legacy back-end areas of the main app with scalability and performance in mind. Whilst working here, I have also build two open-source libraries in Rust which we compile to WebAssembly - *Typescript, GCP, Cloud Functions, Terraform, PubSub, Next.js, React*.
+- **Freelance Projects** - Various professional freelance contracts doing design work, full stack internal service or website development for differing firms.
+
+
+
+---
+
 ## Volunteering and Other Experience
 
-- **Indeed Flex (2021-Present)** - A number of temp jobs including: hotel work, shelf stocking, cleaning and waitering. 
+- **Indeed Flex (2021)** - A number of temp jobs including: hotel work, shelf stocking, cleaning and waitering.
 - **AutoRek, Glasgow Office (2016)** -  Work experience shadowing a tester, responding to customer inquiries and sitting in on scrum meetings.
 - **Sisters of Mercy (2016-2018)** - Volunteer work serving food and drink to the homeless, unloading deliveries and simple food preparation.
 - **Gorgie Farm (2014-2018)** - Volunteer work feeding the animals, cleaning pens and working the til.
@@ -70,7 +80,7 @@ A full stack developer from Edinburgh who loves minimalist programming and Rust.
 
 ## Achievements
 
-- **The Andrew Stewart Prize (2018/2019**) - Awarded for the most deserving student of a degree programme in the Department of Computer Science.
+- **The Andrew Stewart Prize (2018/2019**) - Awarded to the most deserving student of a degree programme in the Department of Computer Science.
 - **Inspiring Volunteer Award (2016)** - For assisting and mentoring a volunteer who had additional support needs with the animals and farm work at Gorgie Farm.
 - **Young Scott Award Nominee (2016)**
 - **Duke of Edinburgh Award (2016)**
@@ -80,7 +90,7 @@ A full stack developer from Edinburgh who loves minimalist programming and Rust.
 ## Hobbies and Interests
 
 - Developing open-source projects.
-- Mountain Biking.
+- Mountain biking and wild camping.
 - A love of economics, philosophy and theology.
 
 ---
